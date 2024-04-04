@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Inject, Patch, Post } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Inject, Patch, Post } from '@nestjs/common';
 import GetShelterDetailsUseCaseOutput from './usecases/dtos/get.shelter.details.usecase.output';
 import { IUseCase } from 'src/domain/iusecase.interface';
 import ShelterTokens from './shelter.tokens';
