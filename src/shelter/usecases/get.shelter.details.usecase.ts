@@ -1,6 +1,6 @@
 import { IUseCase } from 'src/domain/iusecase.interface';
 import GetShelterDetailsUseCaseOutput from './dtos/get.shelter.details.usecase.output';
-import IShelterRepository from '../interfaces/shelter.interface';
+import IShelterRepository from '../interfaces/shelter.repository.interface';
 import { Inject } from '@nestjs/common';
 import ShelterTokens from '../shelter.tokens';
 
@@ -20,7 +20,7 @@ export default class GetShelterDetailsUseCase
       shelterPhone: shelter.phone,
       shelterWhatsApp: shelter.whatsApp,
       createdAt: shelter.createdAt,
-      updatedAt: shelter.updateAt,
+      updatedAt: shelter.updatedAt,
     });
   }
 }
