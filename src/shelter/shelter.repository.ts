@@ -5,7 +5,7 @@ import IShelterRepository from './interfaces/shelter.repository.interface';
 import { Shelter } from './schemas/shelter.schema';
 
 @Injectable()
-export class ShelterRepository implements IShelterRepository {
+export default class ShelterRepository implements IShelterRepository {
   constructor(
     @InjectModel(Shelter.name)
     private shelterModel: Model<Shelter>,
