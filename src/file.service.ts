@@ -4,7 +4,18 @@ import IFileService from './interfaces/file.service.interface';
 
 @Injectable()
 export default class FileService implements IFileService {
-  async readFile(path: string): Promise<Buffer> {
-    return fs.readFileSync(path);
+  async readFileInBase64(path: string): Promise<string> {
+
+    const fileExists = this.fileExists(path)
+
+    if(!fileExists) {
+      return null
+    }
+
+    return fs.readFileSync(path).toString('base64');   
+  }
+
+  private fileExists(path: string): boolean {
+    return fs.existsSync(path)
   }
 }
