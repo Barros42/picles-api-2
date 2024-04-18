@@ -6,9 +6,7 @@ import IFileService from './interfaces/file.service.interface';
 export default class FileService implements IFileService {
   async readFileInBase64(path: string): Promise<string> {
 
-    const fileExists = this.fileExists(path)
-
-    if(!fileExists) {
+    if(!this.fileExists(path)) {
       return null
     }
 
